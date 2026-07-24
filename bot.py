@@ -1,5 +1,5 @@
 import asyncio
-import sqlite3
+import import
 from aiogram import Bot, Dispatcher, F
 from aiogram.enums import ParseMode
 from aiogram.client.default import DefaultBotProperties
@@ -17,8 +17,10 @@ from aiogram.types import (
 # SOZLAMALAR
 # ==========================
 
-BOT_TOKEN = "8288853849:AAFfJaYec6NgTldlZp2R7svby5iSLc8lB8E"
-ADMIN_ID = 6401247171
+import os
+
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+ADMIN_ID = int(os.getenv("ADMIN_ID"))
 
 FORCE_CHANNELS = [
     "@VIP_drama_uz01",
@@ -255,7 +257,6 @@ async def send_broadcast(message: Message):
 
     if not broadcast_mode:
         return
-
     broadcast_mode = False
 
     sql.execute("SELECT id FROM users")
