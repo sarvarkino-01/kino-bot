@@ -1,4 +1,5 @@
 import asyncio 
+import sqlite3
 from aiogram import Bot, Dispatcher, F
 from aiogram.enums import ParseMode
 from aiogram.client.default import DefaultBotProperties
